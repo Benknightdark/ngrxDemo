@@ -1,18 +1,20 @@
-import { Action } from '@ngrx/store';
+import { CounterAction, ActionSingnal } from './store';
 
-export const INCREMENT = 'INCREMENT';
-export const DECREMENT = 'DECREMENT';
-export const RESET = 'RESET';
+// export const INCREMENT = 'INCREMENT';
+// export const DECREMENT = 'DECREMENT';
+// export const RESET = 'RESET';
 
-export function counterReducer(state: number = 0, action: Action) {
+
+
+export function counterReducer(state: number = 0, action: CounterAction) {
   switch (action.type) {
-    case INCREMENT:
+    case ActionSingnal.INCREMENT:
       return state + 1;
 
-    case DECREMENT:
+    case ActionSingnal.DECREMENT:
       return state - 1;
 
-    case RESET:
+    case ActionSingnal.RESET:
       return 0;
 
     default:

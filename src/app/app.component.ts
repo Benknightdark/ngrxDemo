@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import { INCREMENT, DECREMENT, RESET } from './counter';
-import { AppState } from './store';
-
-
-
-
+import { AppState, ActionSingnal } from './store';
+import { CounterAction } from './store';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -22,14 +18,14 @@ export class AppComponent {
   }
 
   increment() {
-    this.store.dispatch({ type: INCREMENT });
+    this.store.dispatch<CounterAction>({ type: ActionSingnal.INCREMENT });
   }
 
   decrement() {
-    this.store.dispatch({ type: DECREMENT });
+    this.store.dispatch<CounterAction>({ type: ActionSingnal.DECREMENT });
   }
 
   reset() {
-    this.store.dispatch({ type: RESET });
+    this.store.dispatch<CounterAction>({ type: ActionSingnal.RESET });
   }
 }
