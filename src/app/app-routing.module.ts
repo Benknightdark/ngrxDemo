@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ClickComponent } from './click/click.component';
 
 const routes: Routes = [
   {
-    path: '',
-    children: []
+    path: 'click',
+    component: ClickComponent
   }
 ];
 
