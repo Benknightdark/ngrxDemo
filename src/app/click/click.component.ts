@@ -15,7 +15,7 @@ export class ClickComponent implements OnInit {
     constructor(private store: Store<AppState>) {
     }
     ngOnInit() {
-      this.counter = this.store.select<number>(AppState => AppState.counter);
+     // this.counter = this.store.select<number>(AppState => AppState.counter);
     }
 
     increment() {

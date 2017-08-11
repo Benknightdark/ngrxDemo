@@ -12,16 +12,14 @@ import { Observable } from 'rxjs/Observable';
 export class PageComponent implements OnInit {
   todos: Observable<todos>;
   constructor(private ts: TodoService, private store: Store<TodoState>) {
-    this.todos= this.store.select('todos')//<todos>(TodoState=>TodoState.todos);
+    this.todos = this.store.select('todos');
   }
 
   ngOnInit() {
-   // this.todos = this.ts.GetToDoData();
-   //this.store.dispatch<any>({ type: String(TodoActionType.ADD) });
+    this.todos = this.ts.GetToDoData();
   }
-  OnClick(t){
-    //console.log(t)
-   // this.store.dispatch<any>({ type: String(TodoActionType.ADD),data:t });
+  OnClick(t) {
+    this.store.dispatch<any>({ type: String(TodoActionType.ADD), id: t });
 
   }
 

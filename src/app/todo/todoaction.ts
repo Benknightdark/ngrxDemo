@@ -1,15 +1,17 @@
 
 import { Action } from '@ngrx/store';
 import { todos, TodoActionType, TodoState } from './todostore';
-
-export function TodoReducer(state: todos={
+/**
+ ={
 Title:"111",
 Body:"21321",
 CreateTime:"123",
 isChecked:"213"
 
 
-}, action: any) {
+}
+ */
+export function TodoReducer(state: todos, action: any) {
   switch (Number(action.type)) {
 
     case TodoActionType.ADD:

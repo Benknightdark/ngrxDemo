@@ -21,7 +21,7 @@ import { TodoRoutingModule } from './todo/todo-routing.module';
     AppRoutingModule,
     TodoRoutingModule,
     TodoModule,
-    StoreModule.forRoot({ counter: counterReducer })
+   // StoreModule.forRoot({ counter: counterReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,8 +1,9 @@
 export interface todos {
   Title: string;
   Body: string;
-  CreateTime: any;
-  isChecked:any;
+  CreateTime: Date;
+  isChecked:boolean;
+  id:any;
 }
 
 export interface TodoState {
