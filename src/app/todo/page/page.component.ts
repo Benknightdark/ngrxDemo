@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoService } from '../services/todo.service';
 import { Store } from '@ngrx/store';
-import { TodoContent, TodoActionType, TodoState } from '../todostore';
+import { todos, TodoActionType, TodoState } from '../todostore';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
@@ -10,17 +10,18 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./page.component.css']
 })
 export class PageComponent implements OnInit {
-  todos: Observable<TodoContent>;
+  todos: Observable<todos>;
   constructor(private ts: TodoService, private store: Store<TodoState>) {
-    this.store.select<TodoContent>(TodoState=>TodoState.todos);
+    this.todos= this.store.select('todos')//<todos>(TodoState=>TodoState.todos);
   }
 
   ngOnInit() {
-    this.todos = this.ts.GetToDoData();
+   // this.todos = this.ts.GetToDoData();
+   //this.store.dispatch<any>({ type: String(TodoActionType.ADD) });
   }
   OnClick(t){
     //console.log(t)
-    this.store.dispatch<any>({ type: String(TodoActionType.ADD),data:t });
+   // this.store.dispatch<any>({ type: String(TodoActionType.ADD),data:t });
 
   }
 

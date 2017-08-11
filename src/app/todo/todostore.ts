@@ -1,12 +1,12 @@
-export interface TodoContent {
+export interface todos {
   Title: string;
   Body: string;
-  CreateTime: Date;
-  isChecked: boolean;
+  CreateTime: any;
+  isChecked:any;
 }
 
 export interface TodoState {
-  todos: TodoContent;
+  todos: todos;
   lastUpdate: Date;
 }
 export enum TodoActionType {
